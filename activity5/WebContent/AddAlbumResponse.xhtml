@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Add Album Response</title>
+</h:head> 
+
+<body> 
+	<div align="center">
+		<h:form align="center">
+			<table style="text-align: center" class="index">
+				<tr>
+					<td><h1>Add Music Album</h1></td>
+				</tr>
+				<tr>
+					<td>Title: #{album.title}</td>
+				</tr>
+				<tr>
+					<td>Artist: #{album.artist}</td>
+				</tr>
+				<tr>
+					<td>Year: #{album.year}</td>
+				</tr>
+				<tr>
+					<td><h:button value="Add Another" outcome="AddAlbumForm.xhtml"/><br/></td>
+				</tr>
+			</table>
+			
+			<td><h2>Track List</h2></td>
+			<h:dataTable value="#{album.tracks}" var="track" style="text-align:center">
+				<h:column>
+					<f:facet name="header">Track Number</f:facet>
+					#{track.number}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					#{track.title}
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+</body> 
+
+</html>
